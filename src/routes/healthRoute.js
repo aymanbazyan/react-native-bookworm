@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 const router = express.Router();
 
-router.get("/", async (_req, res) => {
+router.get("/api/health", async (_req, res) => {
   try {
     // Fast ping that never touches any collection
     await mongoose.connection.db.admin().ping(); // < 2 ms on warm cluster
